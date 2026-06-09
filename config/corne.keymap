@@ -50,13 +50,13 @@
         };
 
         // ==================== MAC MODE (layers 4-7) ====================
-        // Swapped LGUI <-> LALT, RGUI <-> RALT
+        // Swapped LEFT_CONTROL <-> LGUI, RIGHT_CONTROL <-> RGUI (where present)
         mac_default_layer {
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp B        &kp J      &kp L  &kp U             &kp Y    &kp SEMI  &kp BSPC
 &kp ESC    &kp A  &kp R  &kp S     &kp T  &kp G        &kp M      &kp N  &kp E             &kp I    &kp O     &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V        &kp K      &kp H  &kp COMMA         &kp DOT  &kp FSLH  &kp LGUI    // swapped: LEFT_ALT -> LGUI
-                         &kp LALT  &mo 5  &kp ENTER    &kp SPACE  &mo 6  &kp LEFT_CONTROL   // swapped: LGUI -> LALT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V        &kp K      &kp H  &kp COMMA         &kp DOT  &kp FSLH  &kp LEFT_ALT
+                         &kp LEFT_CONTROL  &mo 5  &kp ENTER    &kp SPACE  &mo 6  &kp LGUI   // swapped: GUI<->CTRL on thumbs
             >;
         };
 
@@ -65,16 +65,16 @@
 &kp TAB     &kp EXCL   &kp LBRC  &kp RBRC  &kp PRCNT  &kp AMPS     &kp KP_DIVIDE  &kp N7  &kp N8        &kp N9  &kp PLUS   &kp BSPC
 &kp DLLR    &kp AT     &kp LPAR  &kp RPAR  &kp CARET  &kp HASH     &kp STAR       &kp N4  &kp N5        &kp N6  &kp MINUS  &trans
 &kp LSHIFT  &kp UNDER  &kp LBKT  &kp RBKT  &kp BSLH   &kp GRAVE    &kp EQUAL      &kp N1  &kp N2        &kp N3  &kp DOT    &kp RSHIFT
-                                 &kp LALT  &trans     &kp ENTER    &kp SPACE      &trans  &kp NUMBER_0   // swapped: LGUI -> LALT
+                                 &kp LEFT_CONTROL  &trans     &kp ENTER    &kp SPACE      &trans  &kp NUMBER_0   // swapped: GUI->CTRL
             >;
         };
 
         mac_raise_layer {
             bindings = <
 &kp TAB     &trans     &trans     &trans     &trans            &trans          &studio_unlock  &trans    &kp RA(Y)  &trans     &trans     &kp BSPC
-&kp ESCAPE  &kp RA(Q)  &kp LC(S)  &kp RA(S)  &kp LEFT_CONTROL  &kp LGUI        &trans          &kp LEFT  &kp UP     &kp RIGHT  &kp RA(P)  &trans   // swapped: LEFT_ALT -> LGUI
-&kp LSHFT   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)         &trans          &trans          &trans    &kp DOWN   &trans     &trans     &kp LEFT_CONTROL
-                                  &kp LALT   &trans            &kp ENTER       &kp SPACE       &trans    &kp RGUI                      // swapped: LGUI->LALT, RALT->RGUI
+&kp ESCAPE  &kp RA(Q)  &kp LC(S)  &kp RA(S)  &kp LGUI          &kp LEFT_ALT    &trans          &kp LEFT  &kp UP     &kp RIGHT  &kp RA(P)  &trans   // swapped: CTRL->GUI
+&kp LSHFT   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)         &trans          &trans          &trans    &kp DOWN   &trans     &trans     &kp LGUI    // swapped: RIGHT_CTRL? Actually last key was LEFT_CONTROL -> now LGUI
+                                  &kp LEFT_CONTROL   &trans            &kp ENTER       &kp SPACE       &trans    &kp RALT   // swapped: GUI->CTRL on thumb
             >;
         };
 
@@ -83,7 +83,7 @@
 &kp F1      &kp F2          &kp F3        &kp F4        &kp F5        &kp F6          &kp F7            &kp F8         &kp F9    &kp F10  &kp F11        &kp F12
 &trans      &kp KP_NUMLOCK  &kp CAPS      &trans        &trans        &trans          &kp C_PLAY_PAUSE  &kp C_VOLUME_UP    &trans    &trans   &kp LG(LS(S))  &trans
 &bt BT_CLR  &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp C_MUTE        &kp C_VOLUME_DOWN  &trans    &trans   &trans         &trans
-                                          &kp LEFT_WIN  &trans        &kp ENTER       &kp SPACE         &trans             &kp RGUI   // swapped RALT->RGUI
+                                          &kp LEFT_WIN  &trans        &kp ENTER       &kp SPACE         &trans             &kp RGUI   // swapped: RALT->RGUI
             >;
         };
     };
